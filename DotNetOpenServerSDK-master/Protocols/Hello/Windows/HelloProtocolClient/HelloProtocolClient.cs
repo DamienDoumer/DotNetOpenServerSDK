@@ -30,6 +30,16 @@ namespace US.OpenServer.Protocols.Hello
     /// </summary>
     public class HelloProtocolClient : HelloProtocol
     {
+        /// -------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// Event fired when the hello packet has been received
+        /// </summary>
+        /// <param name="packet"></param>
+        public delegate void HelloPacketReceivedEventHanlder(byte[] packet);
+        public event HelloPacketReceivedEventHanlder HelloPacketReceived;
+
         /// <summary>
         /// Delegate that defines the <see cref="OnHelloComplete"/> event handler.
         /// </summary>

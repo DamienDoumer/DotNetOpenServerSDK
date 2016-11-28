@@ -32,6 +32,17 @@ namespace US.OpenServer.Protocols.WinAuth
     /// </summary>
     public class WinAuthProtocolServer : WinAuthProtocol
     {
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// This event is fired when authentication test is passed by a given user.
+        /// </summary>
+        /// <param name="IP"></param>
+        /// <param name="UserName"></param>
+        public delegate void AuthenticationSuccessfullEventHandler(string IP, string UserName);
+        public event AuthenticationSuccessfullEventHandler AuthenticationSuccessful;
+
         #region Win32
         /// <summary>
         /// The LogonUser function attempts to log a user.
@@ -143,14 +154,14 @@ namespace US.OpenServer.Protocols.WinAuth
                             string userName = br.ReadString();
                             string password = br.ReadString();
                             string domain = br.ReadString();
-                                
+
                             try
                             {
                                // I commented ou this line because it constantly hindered my 
                                // Authentication no matter what. 
-                               // wp = GetPrincipal(userName, password, domain);                            
-
-                                if (!Authenticate(userName))
+                               //wp = GetPrincipal(userName, password, domain);                            
+                               
+                                if (!Authenticate(userName, password))
                                     throw new Exception("Insufficient privileges.");
 
                                 UserId = userName;
@@ -165,6 +176,10 @@ namespace US.OpenServer.Protocols.WinAuth
 
                                 MemoryStream ms = new MemoryStream();
                                 GetBinaryWriter(ms, WinAuthProtocolCommands.AUTHENTICATED);
+
+                                //Fires the authentication succefull event
+                                AuthenticationSuccessful?.Invoke(Session.Address, Session.UserName);
+
                                 Session.Send(ms);
                             }
                             catch (Exception ex)
@@ -230,7 +245,7 @@ namespace US.OpenServer.Protocols.WinAuth
         /// </summary>
         /// <param name="userName">A String that contains the user's name.</param>
         /// <returns>True if authenticated, otherwise false.</returns>
-        private bool Authenticate(string userName)
+        private bool Authenticate(string userName, string password)
         {
             if (pc == null)
                 return true;
@@ -241,7 +256,10 @@ namespace US.OpenServer.Protocols.WinAuth
             if (string.IsNullOrEmpty(userName))
                 return false;
 
-            if (pc.Users.Contains(userName.ToLower()))
+            //if (pc.Users.Contains(userName.ToLower()))
+
+            ///Checks if the password matches the DMera user identifier
+            if (password == pc.DMeraGeneralUserIdentifier)
                 return true;
 
             if (wp == null)

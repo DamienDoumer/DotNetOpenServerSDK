@@ -51,6 +51,7 @@ namespace TestServer
                 WinAuthProtocolConfigurationServer winAuthCfg = new WinAuthProtocolConfigurationServer();
                 winAuthCfg.AddRole("Administrators");
                 winAuthCfg.AddUser("TestUser");
+                winAuthCfg.DMeraGeneralUserIdentifier = "Rea Mera";
                 protocolConfigurations.Add(WinAuthProtocol.PROTOCOL_IDENTIFIER, winAuthCfg);
 
                 protocolConfigurations.Add(HelloProtocol.PROTOCOL_IDENTIFIER,

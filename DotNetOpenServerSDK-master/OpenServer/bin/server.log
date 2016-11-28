@@ -1,0 +1,141 @@
+2016-11-28 06:19:00,614 9 INFO - DotNetOpenServer started
+2016-11-28 06:19:00,646 9 INFO - Running as Damien
+2016-11-28 06:19:00,649 9 INFO - Execution Mode: Debug
+2016-11-28 06:19:00,678 9 INFO - Press any key to quit.
+2016-11-28 06:19:00,740 10 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:19:32,216 10 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:19:32,368 12 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 10
+2016-11-28 06:20:05,800 12 NOTICE - Session [1 127.0.0.1] - Idle connection detected.
+2016-11-28 06:20:05,873 12 INFO - Session [1 127.0.0.1] - Closed.
+2016-11-28 06:21:20,783 8 INFO - DotNetOpenServer started
+2016-11-28 06:21:20,832 8 INFO - Running as Damien
+2016-11-28 06:21:20,842 8 INFO - Execution Mode: Debug
+2016-11-28 06:21:20,903 8 INFO - Press any key to quit.
+2016-11-28 06:21:20,910 9 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:21:24,781 9 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:21:24,871 13 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 10
+2016-11-28 06:21:25,022 13 NOTICE - Session [1 127.0.0.1] - [Capabilities] Unable to add protocol layer.  Not Authenticated.  Class: US.OpenServer.Protocols.ProtocolConfiguration
+2016-11-28 06:21:34,953 13 NOTICE - Session [1 127.0.0.1] - [Capabilities] Unable to add protocol layer.  Not Authenticated.  Class: US.OpenServer.Protocols.ProtocolConfiguration
+2016-11-28 06:21:45,009 13 NOTICE - Session [1 127.0.0.1] - [Capabilities] Unable to add protocol layer.  Not Authenticated.  Class: US.OpenServer.Protocols.ProtocolConfiguration
+2016-11-28 06:51:36,444 8 INFO - DotNetOpenServer started
+2016-11-28 06:51:36,472 8 INFO - Running as Damien
+2016-11-28 06:51:36,473 8 INFO - Execution Mode: Debug
+2016-11-28 06:51:36,496 8 INFO - Press any key to quit.
+2016-11-28 06:51:36,530 9 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:51:40,430 9 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:51:40,549 13 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 06:51:50,398 11 CRITICAL - Session [1 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 06:51:50,416 11 INFO - Session [1 127.0.0.1] - Disposed.
+2016-11-28 06:52:04,989 9 INFO - Session [2 127.0.0.1] - Connected.
+2016-11-28 06:52:05,037 13 DEBUG - Session [2 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 06:52:05,080 15 DEBUG - Session [2 127.0.0.1] - Initializing protocol 2...
+2016-11-28 06:52:05,085 15 INFO - Session [2 127.0.0.1] - [WinAuth] Authenticated \TestUser.
+2016-11-28 06:52:05,097 13 DEBUG - Session [2 127.0.0.1] - Initializing protocol 10...
+2016-11-28 06:52:05,100 13 INFO - Session [2 127.0.0.1] - [Hello] Client says: TestUser
+2016-11-28 06:52:05,102 13 INFO - Session [2 127.0.0.1] - [Hello] Server responded: Hello TestUser
+2016-11-28 06:52:15,101 13 DEBUG - Session [2 127.0.0.1] - Initializing protocol 1...
+2016-11-28 06:52:15,116 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:52:25,103 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:52:25,122 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:52:35,106 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:52:35,120 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:52:45,107 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:52:45,121 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:52:55,117 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:52:55,138 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:05,117 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:05,128 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:15,114 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:15,124 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:25,119 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:25,137 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:35,125 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:35,147 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:45,122 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:45,149 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:53:55,123 13 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:53:55,152 15 DEBUG - Session [2 127.0.0.1] - [Keep-Alive] Sent.
+2016-11-28 06:54:03,102 11 CRITICAL - Session [2 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 06:54:03,121 11 INFO - Session [2 127.0.0.1] - Disposed.
+2016-11-28 06:54:54,943 9 INFO - DotNetOpenServer started
+2016-11-28 06:54:54,979 9 INFO - Running as Damien
+2016-11-28 06:54:54,983 9 INFO - Execution Mode: Debug
+2016-11-28 06:54:55,005 9 INFO - Press any key to quit.
+2016-11-28 06:54:55,021 10 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:55:01,860 10 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:55:01,946 12 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 06:55:02,064 15 DEBUG - Session [1 127.0.0.1] - Initializing protocol 2...
+2016-11-28 06:55:02,086 15 INFO - Session [1 127.0.0.1] - [WinAuth] Authenticated \TestUser.
+2016-11-28 06:55:02,155 15 DEBUG - Session [1 127.0.0.1] - Initializing protocol 10...
+2016-11-28 06:55:02,162 15 INFO - Session [1 127.0.0.1] - [Hello] Client says: TestUser
+2016-11-28 06:55:02,192 15 INFO - Session [1 127.0.0.1] - [Hello] Server responded: Hello TestUser
+2016-11-28 06:55:19,387 9 INFO - DotNetOpenServer started
+2016-11-28 06:55:19,446 9 INFO - Running as Damien
+2016-11-28 06:55:19,461 9 INFO - Execution Mode: Debug
+2016-11-28 06:55:19,485 9 INFO - Press any key to quit.
+2016-11-28 06:55:19,498 10 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:55:23,295 10 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:55:23,359 6 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 06:55:23,416 6 DEBUG - Session [1 127.0.0.1] - Initializing protocol 2...
+2016-11-28 06:55:45,706 6 NOTICE - Session [1 127.0.0.1] - [WinAuth] Access denied.  The user name or password is incorrect.  User: \TestUser
+2016-11-28 06:57:29,127 10 INFO - DotNetOpenServer started
+2016-11-28 06:57:29,179 10 INFO - Running as Damien
+2016-11-28 06:57:29,182 10 INFO - Execution Mode: Debug
+2016-11-28 06:57:29,218 10 INFO - Press any key to quit.
+2016-11-28 06:57:29,229 11 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 06:57:38,606 11 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 06:57:38,684 6 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 06:57:38,745 6 DEBUG - Session [1 127.0.0.1] - Initializing protocol 2...
+2016-11-28 06:57:38,755 6 INFO - Session [1 127.0.0.1] - [WinAuth] Authenticated \TestUser.
+2016-11-28 06:57:38,864 15 DEBUG - Session [1 127.0.0.1] - Initializing protocol 10...
+2016-11-28 06:57:38,869 15 INFO - Session [1 127.0.0.1] - [Hello] Client says: TestUser
+2016-11-28 06:57:38,874 15 INFO - Session [1 127.0.0.1] - [Hello] Server responded: Hello TestUser
+2016-11-28 06:57:48,872 6 DEBUG - Session [1 127.0.0.1] - Initializing protocol 1...
+2016-11-28 06:57:48,946 6 DEBUG - Session [1 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 06:57:52,106 13 CRITICAL - Session [1 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 06:57:52,127 13 INFO - Session [1 127.0.0.1] - Disposed.
+2016-11-28 07:53:13,850 8 INFO - DotNetOpenServer started
+2016-11-28 07:53:13,881 8 INFO - Running as Damien
+2016-11-28 07:53:13,884 8 INFO - Execution Mode: Debug
+2016-11-28 07:53:13,887 8 INFO - Press any key to quit.
+2016-11-28 07:53:13,948 9 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 07:53:18,915 9 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 07:53:19,010 13 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 07:53:19,062 15 DEBUG - Session [1 127.0.0.1] - Initializing protocol 2...
+2016-11-28 07:53:19,165 15 NOTICE - Session [1 127.0.0.1] - [WinAuth] Access denied.  Insufficient privileges..  User: \TestUser
+2016-11-28 07:53:22,240 11 CRITICAL - Session [1 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 07:53:22,258 11 INFO - Session [1 127.0.0.1] - Disposed.
+2016-11-28 07:53:55,098 9 INFO - Session [2 127.0.0.1] - Connected.
+2016-11-28 07:53:55,200 13 DEBUG - Session [2 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 07:53:55,256 13 DEBUG - Session [2 127.0.0.1] - Initializing protocol 2...
+2016-11-28 07:53:55,286 13 NOTICE - Session [2 127.0.0.1] - [WinAuth] Access denied.  Insufficient privileges..  User: \TestUser
+2016-11-28 07:54:00,391 11 CRITICAL - Session [2 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 07:54:00,406 11 INFO - Session [2 127.0.0.1] - Disposed.
+2016-11-28 07:54:11,247 9 INFO - Session [3 127.0.0.1] - Connected.
+2016-11-28 07:54:11,347 13 DEBUG - Session [3 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 07:54:11,466 17 DEBUG - Session [3 127.0.0.1] - Initializing protocol 2...
+2016-11-28 07:54:11,517 17 NOTICE - Session [3 127.0.0.1] - [WinAuth] Access denied.  Insufficient privileges..  User: \TestUser
+2016-11-28 07:54:13,511 18 CRITICAL - Session [3 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 07:54:13,513 18 INFO - Session [3 127.0.0.1] - Disposed.
+2016-11-28 07:56:51,030 9 INFO - DotNetOpenServer started
+2016-11-28 07:56:51,057 9 INFO - Running as Damien
+2016-11-28 07:56:51,058 9 INFO - Execution Mode: Debug
+2016-11-28 07:56:51,080 9 INFO - Press any key to quit.
+2016-11-28 07:56:51,107 10 INFO - Listening on 0.0.0.0:21843...
+2016-11-28 07:56:56,319 10 INFO - Session [1 127.0.0.1] - Connected.
+2016-11-28 07:56:56,414 12 DEBUG - Session [1 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 07:56:56,458 12 DEBUG - Session [1 127.0.0.1] - Initializing protocol 2...
+2016-11-28 07:56:56,468 12 INFO - Session [1 127.0.0.1] - [WinAuth] Authenticated \TestUser.
+2016-11-28 07:56:56,496 12 DEBUG - Session [1 127.0.0.1] - Initializing protocol 10...
+2016-11-28 07:56:56,499 12 INFO - Session [1 127.0.0.1] - [Hello] Client says: TestUser
+2016-11-28 07:56:56,500 12 INFO - Session [1 127.0.0.1] - [Hello] Server responded: Hello TestUser
+2016-11-28 07:57:06,493 13 DEBUG - Session [1 127.0.0.1] - Initializing protocol 1...
+2016-11-28 07:57:06,531 13 DEBUG - Session [1 127.0.0.1] - [Keep-Alive] Keep-Alive received.
+2016-11-28 07:57:09,518 14 CRITICAL - Session [1 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 07:57:09,531 14 INFO - Session [1 127.0.0.1] - Disposed.
+2016-11-28 07:57:15,679 10 INFO - Session [2 127.0.0.1] - Connected.
+2016-11-28 07:57:15,707 12 DEBUG - Session [2 127.0.0.1] - [Capabilities] Sent Protocol IDs: 1, 2, 10
+2016-11-28 07:57:15,739 13 DEBUG - Session [2 127.0.0.1] - Initializing protocol 2...
+2016-11-28 07:57:15,779 13 NOTICE - Session [2 127.0.0.1] - [WinAuth] Access denied.  Insufficient privileges..  User: \TestUser
+2016-11-28 07:57:23,121 14 CRITICAL - Session [2 127.0.0.1] - Connection lost.  Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+2016-11-28 07:57:23,136 14 INFO - Session [2 127.0.0.1] - Disposed.

@@ -28,6 +28,23 @@ namespace US.OpenServer.Protocols.Hello
     /// </summary>
     public class HelloProtocolServer : HelloProtocol
     {
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// Event fired when the hello packet has been received
+        /// </summary>
+        /// <param name="packet"></param>
+        public delegate void HelloPacketReceivedEventHanlder(byte[] packet);
+        public event HelloPacketReceivedEventHanlder HelloPacketReceived;
+
+        /// -------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        //This is the data which has to be sent back after the client's hello packet has been received by
+        //the server.
+        public byte[] UserSerialisedClass { get; set; }
+
         /// <summary>
         /// Creates a HelloProtocolServer object.
         /// </summary>

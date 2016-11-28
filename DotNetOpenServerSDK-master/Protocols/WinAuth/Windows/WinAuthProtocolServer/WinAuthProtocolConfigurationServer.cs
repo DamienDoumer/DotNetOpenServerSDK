@@ -30,6 +30,15 @@ namespace US.OpenServer.Protocols.WinAuth
     public class WinAuthProtocolConfigurationServer : ProtocolConfigurationEx
     {
         #region Private Constants
+
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// This is used to identify if connected host is a DMera user or not
+        /// </summary>
+        public string DMeraGeneralUserIdentifier { get; set; }
+
         /// <summary>
         /// The XML key that contains the permissions.
         /// </summary>

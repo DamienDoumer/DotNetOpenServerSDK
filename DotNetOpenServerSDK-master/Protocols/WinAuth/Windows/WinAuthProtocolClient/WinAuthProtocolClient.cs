@@ -29,6 +29,38 @@ namespace US.OpenServer.Protocols.WinAuth
     /// </summary>
     public class WinAuthProtocolClient : WinAuthProtocol
     {
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// This event is fired when authentication test is passed by a given user.
+        /// </summary>
+        /// <param name="IP"></param>
+        /// <param name="UserName"></param>
+        public delegate void AuthenticationSuccessfullEventHandler(string IP, string UserName);
+        public event AuthenticationSuccessfullEventHandler AuthenticationSuccessful;
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// This event is fired when authentication test Has been altered due to an internal error.
+        /// </summary>
+        /// <param name="IP"></param>
+        /// <param name="UserName"></param>
+        public delegate void AuthenticationErrorEventHandler(string IP, string UserName, string errorMessage);
+        public event AuthenticationErrorEventHandler AuthenticationError;
+        ///--------------------------------------
+        /// DMera Added
+        /// -------------------------------------
+        /// <summary>
+        /// This event is fired when authentication test Has Failed.
+        /// </summary>
+        /// <param name="IP"></param>
+        /// <param name="UserName"></param>
+        public delegate void AuthenticationFailedEventHandler(string IP, string UserName);
+        public event AuthenticationFailedEventHandler AuthenticationFailed;
+
+
         /// <summary>
         /// Defines the maximum number of milliseconds to wait for an authentication request. 
         /// </summary>
@@ -46,12 +78,16 @@ namespace US.OpenServer.Protocols.WinAuth
         /// waiting for a response from the server.
         /// </summary>
         /// <param name="userName">A String that contains the user's name.</param>
-        /// <param name="password">A String that contains the user's password.</param>
+        /// <param name="password">For DMera, the password should be a DMera identifier so that 
+        /// the other DMera app should know another DMera is on the network.</param>
         /// <param name="domain">A String that contains the domain or local server name the
         /// user's account resides.</param>
         /// <returns>True if authenticated, otherwise False.</returns>
         public bool Authenticate(string userName, string password, string domain = null)
         {
+            //For DMera, the password should be a DMera identifier so that 
+            //the other DMera app should know.
+
             lock (this)
             {
                 if (Session == null)
@@ -114,11 +150,17 @@ namespace US.OpenServer.Protocols.WinAuth
                     case WinAuthProtocolCommands.AUTHENTICATED:
                         IsAuthenticated = true;
                         Session.IsAuthenticated = true;
+                        
+                        AuthenticationSuccessful?.Invoke(Session.Address, Session.UserName);
+
                         Log(Level.Info, "Authenticated.");
                         Monitor.PulseAll(this);
                         break;
 
                     case WinAuthProtocolCommands.ACCESS_DENIED:
+
+                        AuthenticationFailed?.Invoke(Session.Address, Session.UserName);
+
                         Log(Level.Notice, "Access denied.");
                         Monitor.PulseAll(this);
                         break;
@@ -126,6 +168,9 @@ namespace US.OpenServer.Protocols.WinAuth
                     case WinAuthProtocolCommands.ERROR:
                         {
                             string errorMessage = br.ReadString();
+
+                            AuthenticationError?.Invoke(Session.Address, Session.UserName, errorMessage);
+
                             Log(Level.Notice, errorMessage);
                             Monitor.PulseAll(this);
                             break;

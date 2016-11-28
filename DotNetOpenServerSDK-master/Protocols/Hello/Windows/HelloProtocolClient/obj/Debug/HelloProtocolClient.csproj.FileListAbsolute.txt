@@ -2,3 +2,4 @@ C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-m
 C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\bin\US.OpenServer.Protocols.Hello.Client.pdb
 C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolClient\obj\Debug\US.OpenServer.Protocols.Hello.Client.dll
 C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolClient\obj\Debug\US.OpenServer.Protocols.Hello.Client.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolClient\obj\Debug\HelloProtocolClient.csprojResolveAssemblyReference.cache
