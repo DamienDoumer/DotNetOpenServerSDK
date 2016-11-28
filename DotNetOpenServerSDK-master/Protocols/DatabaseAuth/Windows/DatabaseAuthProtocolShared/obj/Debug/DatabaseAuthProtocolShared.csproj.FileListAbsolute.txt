@@ -1,0 +1,5 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolShared\obj\Debug\DatabaseAuthProtocolShared.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\bin\US.OpenServer.Protocols.DatabaseAuth.Shared.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\bin\US.OpenServer.Protocols.DatabaseAuth.Shared.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolShared\obj\Debug\US.OpenServer.Protocols.DatabaseAuth.Shared.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolShared\obj\Debug\US.OpenServer.Protocols.DatabaseAuth.Shared.pdb

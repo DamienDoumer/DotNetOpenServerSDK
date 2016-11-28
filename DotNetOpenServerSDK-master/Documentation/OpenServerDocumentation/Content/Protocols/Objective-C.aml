@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="CreatingProtocols.Objective-C" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        In this tutorial we will show you how to implement an application layer
+        protocol for OS X and iOS that can be used for Mac, iPhone and iPad applications.
+      </para>
+      <alert>
+        <para>
+          To minimize our code base the DotNetOpenSever SDK's OS X and iOS Objective-C
+          API is auto-generated from our Java source code by the
+          <externalLink>
+            <linkText>J2ObjC</linkText>
+            <linkUri>http://j2objc.org/</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>
+          open source project.
+        </para>
+      </alert>
+    </introduction>
+    
+    <section address="Section1">
+      <title>Implement the Application Layer in Java</title>
+      <content>
+        <procedure>
+          <title>
+          </title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Complete the <link xlink:href="CreatingProtocols.Java">How to Create a Protocol
+                  for Java and Android Applications</link> tutorial.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Complete either the
+                  <link xlink:href="ClientSideComponents.Mac">How to Create a Mac Application</link> tutorial or the
+                  <link xlink:href="ClientSideComponents.iOS">How to Create an iOS Application</link> tutorial.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="JObjC">
+      <title>Use the J2ObjC Open Source Project to Auto-Generate the Objective-C API</title>
+      <content>
+        <procedure>
+          <title>
+          </title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Please see the 
+                  <externalLink>
+                    <linkText>J2ObjC</linkText>
+                    <linkUri>http://j2objc.org/</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink> open source project for detailed instructions.
+                </para>
+              </content>
+            </step>            
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="NextSteps">
+      <title>Next Steps</title>
+      <content>
+        <para> 
+          Copy the auto-generated source files to your <link
+          xlink:href="ClientSideComponents.Mac">Mac</link> and <link
+          xlink:href="ClientSideComponents.iOS">iOS</link> Xcode application projects.
+        </para>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="CreatingProtocols" />
+      <link xlink:href="ClientSideComponents.Mac" />
+      <link xlink:href="ClientSideComponents.iOS" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

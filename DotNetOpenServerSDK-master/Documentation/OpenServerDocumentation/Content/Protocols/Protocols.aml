@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="Protocols" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        Protocols are implemented in stand-alone assemblies which, when requested by
+        the client, are loaded using Reflection. The information required for the server
+        to load the assemblies is contained within the app.config file or can optionally
+        be programatically set.
+      </para>
+
+      <table>
+        <title>This SDK includes two internal protocols and three dynamically loaded protocols:</title>
+        <row>
+          <entry>
+            <para>
+              <codeEntityReference>T:US.OpenServer.Protocols.SessionLayerProtocol</codeEntityReference> (SLP)</para>
+          </entry>
+          <entry>
+            <para>
+              The lowest internal protocol responsible for transmitting and receiving higher
+              level protocols.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para>
+              <codeEntityReference>T:US.OpenServer.Protocols.CapabilitiesProtocol</codeEntityReference> (CAP)</para>
+          </entry>
+          <entry>
+            <para>
+              An internal protocol responsible to providing a list of supported protocols to
+              requesting clients and returning an error when a client attempts to use a
+              protocol that is not supported.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para>
+              <codeEntityReference>N:US.OpenServer.Protocols.WinAuth</codeEntityReference> (WinAuthP)
+            </para>
+          </entry>
+          <entry>
+            <para>Authenticates user supplied credentials against either local or domain accounts.</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para>
+              <codeEntityReference>N:US.OpenServer.Protocols.KeepAlive</codeEntityReference> (KAP)
+            </para>
+          </entry>
+          <entry>
+            <para>
+              An application layer protocol that sends tiny packets back and forth between
+              the clients and server. As soon as the heartbeat stops the framework notifies
+              the application the network has failed enabling server-side components to
+              release associated resources and notify end users a network failure has
+              occurred.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para>
+              <codeEntityReference>N:US.OpenServer.Protocols.Hello</codeEntityReference>
+            </para>
+          </entry>
+          <entry>
+            <para>
+              Shows how to create a simple application layer protocol. The client sends a
+              text hello message to the server. The server responds by sending back a text
+              greeting message.
+            </para>
+          </entry>
+        </row>
+      </table>
+    </introduction>
+
+    <relatedTopics>
+      <link xlink:href="CreatingProtocols" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

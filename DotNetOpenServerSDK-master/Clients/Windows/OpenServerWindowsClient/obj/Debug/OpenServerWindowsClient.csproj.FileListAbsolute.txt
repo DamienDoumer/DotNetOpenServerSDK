@@ -1,0 +1,5 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\bin\US.OpenServer.Windows.Client.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\bin\US.OpenServer.Windows.Client.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\OpenServerWindowsClient\obj\Debug\OpenServerWindowsClient.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\OpenServerWindowsClient\obj\Debug\US.OpenServer.Windows.Client.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\OpenServerWindowsClient\obj\Debug\US.OpenServer.Windows.Client.pdb

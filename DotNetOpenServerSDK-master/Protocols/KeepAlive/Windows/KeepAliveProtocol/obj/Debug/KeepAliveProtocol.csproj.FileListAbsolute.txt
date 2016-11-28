@@ -1,0 +1,4 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\KeepAlive\Windows\bin\US.OpenServer.Protocols.KeepAlive.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\KeepAlive\Windows\bin\US.OpenServer.Protocols.KeepAlive.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\KeepAlive\Windows\KeepAliveProtocol\obj\Debug\US.OpenServer.Protocols.KeepAlive.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\KeepAlive\Windows\KeepAliveProtocol\obj\Debug\US.OpenServer.Protocols.KeepAlive.pdb

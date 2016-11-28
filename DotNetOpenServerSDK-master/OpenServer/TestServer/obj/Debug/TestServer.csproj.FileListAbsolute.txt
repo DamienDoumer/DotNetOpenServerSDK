@@ -1,0 +1,6 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\TestServer\obj\Debug\TestServer.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\bin\TestServer.exe.config
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\bin\TestServer.exe
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\bin\TestServer.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\TestServer\obj\Debug\TestServer.exe
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\OpenServer\TestServer\obj\Debug\TestServer.pdb

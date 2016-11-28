@@ -1,0 +1,6 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\bin\TestClient.exe.config
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\bin\TestClient.exe
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\bin\TestClient.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\TestClient\obj\Debug\TestClient.exe
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Clients\Windows\TestClient\obj\Debug\TestClient.pdb

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="Welcome" visible="True" isDefault="true" />
+  <Topic id="AboutUS" visible="True" title="About US" />
+  <Topic id="ServerSideComponents" visible="True" isExpanded="true" title="Server-Side Components">
+    <Topic id="CreatingServerSideComponents" visible="True" title="Creating Server-Side Components" />
+  </Topic>
+  <Topic id="ClientSideComponents" visible="True" isExpanded="true">
+    <Topic id="ClientSideComponents.Windows" visible="True" title="How to Create a Windows Client Application" />
+    <Topic id="ClientSideComponents.Java" visible="True" title="How to Create a Java Client Application" />
+    <Topic id="ClientSideComponents.Mac" visible="True" title="How to Create a Mac Application" />
+    <Topic id="ClientSideComponents.Android" visible="True" title="How to Create an Android Application" />
+    <Topic id="ClientSideComponents.iOS" visible="True" title="How to Create an iOS Application" />
+    <Topic id="ClientSideComponents.WindowsMobile" visible="True" title="How to Create a Windows Mobile Application" />
+  </Topic>
+  <Topic id="ConfiguringWindowsComponents" visible="True" isExpanded="true">
+    <Topic id="ConfiguringWindowsComponents.app.config" visible="True" isExpanded="true">
+      <Topic id="ConfiguringWindowsComponents.app.config.Protocols" visible="True" isExpanded="true">
+        <Topic id="ConfiguringWindowsComponents.app.config.Protocols.Item" visible="True" />
+      </Topic>
+      <Topic id="ConfiguringWindowsComponents.app.config.Server" visible="True" isExpanded="true">
+        <Topic id="ConfiguringWindowsComponents.app.config.Server.TLS" visible="True" />
+      </Topic>
+    </Topic>
+  </Topic>
+  <Topic id="Protocols" visible="True" isExpanded="true" title="Protocols">
+    <Topic id="CreatingProtocols" visible="True" isExpanded="true" title="Creating Protocols">
+      <Topic id="CreatingProtocols.CSharp" visible="True" title="How to Create a Protocol for Windows and Windows Mobile Applications" />
+      <Topic id="CreatingProtocols.Java" visible="True" title="How to Create a Protocol for Java and Android Applications" />
+      <Topic id="CreatingProtocols.Objective-C" visible="True" isSelected="true" title="How to Create a Protocol for Mac, iPhone and iPad Applications" />
+    </Topic>
+  </Topic>
+  <Topic id="Logging" visible="True" />
+</Topics>

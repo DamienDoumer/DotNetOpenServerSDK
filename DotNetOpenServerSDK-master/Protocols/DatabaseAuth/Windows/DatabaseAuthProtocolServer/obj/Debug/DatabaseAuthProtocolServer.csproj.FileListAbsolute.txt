@@ -1,0 +1,7 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolServer\obj\Debug\DatabaseAuthProtocolServer.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolServer\obj\Debug\US.OpenServer.Protocols.DatabaseAuth.Properties.Resources.resources
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolServer\obj\Debug\DatabaseAuthProtocolServer.csproj.GenerateResource.Cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\bin\US.OpenServer.Protocols.DatabaseAuth.Server.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\bin\US.OpenServer.Protocols.DatabaseAuth.Server.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolServer\obj\Debug\US.OpenServer.Protocols.DatabaseAuth.Server.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\DatabaseAuth\Windows\DatabaseAuthProtocolServer\obj\Debug\US.OpenServer.Protocols.DatabaseAuth.Server.pdb

@@ -1,0 +1,5 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\WinAuth\Windows\WinAuthProtocolServer\obj\Debug\WinAuthProtocolServer.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\WinAuth\Windows\bin\US.OpenServer.Protocols.WinAuth.Server.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\WinAuth\Windows\bin\US.OpenServer.Protocols.WinAuth.Server.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\WinAuth\Windows\WinAuthProtocolServer\obj\Debug\US.OpenServer.Protocols.WinAuth.Server.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\WinAuth\Windows\WinAuthProtocolServer\obj\Debug\US.OpenServer.Protocols.WinAuth.Server.pdb

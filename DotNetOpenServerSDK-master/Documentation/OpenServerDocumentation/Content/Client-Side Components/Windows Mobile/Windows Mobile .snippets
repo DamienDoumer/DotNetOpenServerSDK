@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<examples>
+
+  <item id="WindowsMobile#Using">
+    <sampleCode language="CSharp">
+      using US.OpenServer.Client.Configuration;
+      using US.OpenServer.Protocols;
+      using US.OpenServer.Protocols.Hello;
+      using US.OpenServer.Protocols.KeepAlive;
+      using US.OpenServer.Protocols.WinAuth;
+      using US.OpenServer.WindowsMobile;
+    </sampleCode>
+  </item>
+
+  <item id="WindowsMobile#ServerConfiguration">
+    <sampleCode language="CSharp">
+      ServerConfiguration cfg = new ServerConfiguration();
+      cfg.Host = txtHost.Text;
+      cfg.TlsConfiguration.Enabled = true;
+    </sampleCode>
+  </item>
+
+  <item id="WindowsMobile#Authenticate">
+    <sampleCode language="CSharp">
+      WinAuthProtocolClient wap = (WinAuthProtocolClient)client.Initialize(WinAuthProtocol.PROTOCOL_IDENTIFIER);
+      if (!wap.Authenticate(txtUserName.Text, txtPassword.Password))
+          throw new Exception("Access denied.");
+    </sampleCode>
+  </item>
+
+  <item id="WindowsMobile#KeepAlive">
+    <sampleCode language="CSharp">
+      client.Initialize(KeepAliveProtocol.PROTOCOL_IDENTIFIER);
+    </sampleCode>
+  </item>
+
+  <item id="WindowsMobile#Hello">
+    <sampleCode language="CSharp">
+      HelloProtocolClient hpc = (HelloProtocolClient)client.Initialize(HelloProtocol.PROTOCOL_IDENTIFIER);
+      ShowMessageBox(hpc.Hello(txtUserName.Text));
+    </sampleCode>
+  </item>
+
+</examples>
+

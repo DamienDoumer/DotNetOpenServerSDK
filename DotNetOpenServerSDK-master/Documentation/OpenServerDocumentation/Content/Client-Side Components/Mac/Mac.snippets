@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<examples>
+  <item id="Mac#CodeH">
+    <sampleCode language="Objective-C">
+      #import &lt;Cocoa/Cocoa.h&gt;
+
+      @interface ViewController : NSViewController
+
+      @property (weak) IBOutlet NSTextField *txtHost;
+      @property (weak) IBOutlet NSTextField *txtUserName;
+      @property (weak) IBOutlet NSSecureTextField *txtPassword;
+      @property (weak) IBOutlet NSButton *btnConnect;
+
+      @end
+    </sampleCode>
+  </item>
+  
+    <item id="Mac#ConnectHandler">
+    <sampleCode language="Objective-C">
+      - (IBAction)btnConnect_Clicked:(id)sender {
+          ...
+      }
+    </sampleCode>
+  </item>
+
+  <item id="Mac#LoggerObserverH">
+    <sampleCode language="Objective-C">
+      ...
+      #import "ILoggerObserver.h"
+      ...
+      @interface ViewController : NSViewController &lt;ComUsOpenserverILoggerObserver&gt;
+      ...
+      @end
+    </sampleCode>
+  </item>
+
+  <item id="Mac#ClientObserverH">
+    <sampleCode language="Objective-C">
+      ...
+      #import "IClientObserver.h"
+      ...
+      @interface ViewController : NSViewController &lt;ComUsOpenserverIClientObserver&gt;
+      ...
+      @end
+    </sampleCode>
+  </item>
+  
+  <item id="Mac#ServerConfiguration">
+    <sampleCode language="Objective-C">
+      ComUsOpenserverConfigurationServerConfiguration *cfg = new_ComUsOpenserverConfigurationServerConfiguration_init();
+      [cfg setHostWithNSString: [self.txtHost stringValue]];
+    </sampleCode>
+  </item>
+
+  <item id="Mac#Authenticate">
+    <sampleCode language="Objective-C">
+      ComUsOpenserverProtocolsWinauthWinAuthProtocolClient *wap = (ComUsOpenserverProtocolsWinauthWinAuthProtocolClient *) check_class_cast([client initialize__WithInt:ComUsOpenserverProtocolsWinauthWinAuthProtocol_PROTOCOL_IDENTIFIER], [ComUsOpenserverProtocolsWinauthWinAuthProtocolClient class]);
+      if (![((ComUsOpenserverProtocolsWinauthWinAuthProtocolClient *) nil_chk(wap)) authenticateWithNSString:[self.txtUserName stringValue] withNSString:[self.txtPassword stringValue] withNSString:nil]) @throw new_JavaLangException_initWithNSString_(@"Access denied.");
+    </sampleCode>
+  </item>
+
+  <item id="Mac#Hello">
+    <sampleCode language="Objective-C">
+      ComUsOpenserverProtocolsHelloHelloProtocolClient *hpc = (ComUsOpenserverProtocolsHelloHelloProtocolClient *) check_class_cast([client initialize__WithInt:ComUsOpenserverProtocolsHelloHelloProtocol_PROTOCOL_IDENTIFIER], [ComUsOpenserverProtocolsHelloHelloProtocolClient class]);
+      NSString *serverResponse = [((ComUsOpenserverProtocolsHelloHelloProtocolClient *) nil_chk(hpc)) helloWithNSString:[self.txtUserName stringValue]];
+      [self messageBox:serverResponse];
+    </sampleCode>
+  </item>
+</examples>
+

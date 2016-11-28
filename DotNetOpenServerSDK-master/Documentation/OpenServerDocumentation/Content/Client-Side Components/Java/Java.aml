@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ClientSideComponents.Java" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        This topic shows you how to create a Java console application that uses the Windows
+        Authentication Protocol to authenticate, uses the Keep-Alive Protocol to keep
+        the connection alive and uses the sample Hello Protocol to send and receive a
+        message.
+      </para>
+      <para>
+        The complete source code for this sample application can be found at:
+        <externalLink>
+          <linkText>https://github.com/UpperSetting/DotNetOpenServerSDK/tree/master/Samples/Java/HelloClient</linkText>
+          <linkUri>https://github.com/UpperSetting/DotNetOpenServerSDK/tree/master/Samples/Java/HelloClient</linkUri>
+          <linkTarget>_blank</linkTarget>
+        </externalLink>
+      </para>
+      <autoOutline>0</autoOutline>
+    </introduction>
+
+    <section address="Application">
+      <title>Create a Java Application using Eclipse</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Download
+                  <externalLink>
+                    <linkText>DotNetOpenServerSDK_JavaClient.zip</linkText>
+                    <linkUri>http://github.com/UpperSetting/DotNetOpenServerSDK/releases</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink>
+                  from GitHub then extract the contents.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  If you have not already downloaded Eclipse, click
+                  <externalLink>
+                    <linkText>here</linkText>
+                    <linkUri>http://www.eclipse.org/downloads/</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink>
+                  and you will be re-directed to the Eclipse download page. Once downloaded, launch Eclipse.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Select <legacyBold>File > New > Java Project</legacyBold>
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>New Java Project</legacyBold> dialog set:
+                </para>
+                <list class="bullet">
+                  <listItem>
+                    <para>
+                      the <legacyBold>Project name</legacyBold> to <legacyBold>HelloProtocol</legacyBold>
+                    </para>
+                  </listItem>
+                </list>
+                <para>
+                  Click <legacyBold>Next</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Select the <legacyBold>Libraries</legacyBold> tab then click <legacyBold>Add
+                  External Jars</legacyBold>. Navigate to the directory you previously extracted
+                  the zip file contents then select the following jar files located in the
+                  <legacyBold>bin\Java</legacyBold> sub-directory:
+                </para>
+                <list class="bullet">
+                  <listItem><para>OpenServerClient.jar</para></listItem>
+                  <listItem><para>HelloProtocol.jar</para></listItem>
+                  <listItem><para>KeepAliveProtocol.jar</para></listItem>
+                  <listItem><para>WinAuthProtocol.jar</para></listItem>
+                </list>
+                <para>
+                  Click <legacyBold>Finish</legacyBold>.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="CreateClient">
+      <title>Create an Instance of the Client</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Package Explorer</legacyBold>, expand your project, right
+                  click <legacyBold>HelloClient.java</legacyBold> then select
+                  <legacyBold>Open</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Add the following import statements:
+                </para>
+                <codeReference>Java#Import</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>main</legacyBold> function, create a new instance of the
+                  <legacyBold>HelloClient</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From within the constructor, create a
+                  <legacyBold>com.us.openserver.configuration.ServerConfiguration</legacyBold>
+                  then set the <legacyBold>ServerConfiguration.Host</legacyBold> property along
+                  with any required SSL/TLS properties.
+                </para>
+                <codeReference>Java#ServerConfiguration</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Create a <legacyBold>HashMap</legacyBold> of
+                  <legacyBold>com.us.openserver.protocols.ProtocolConfiguration</legacyBold> keyed
+                  by the unique protocol identifier that contains the following three protocols:
+                </para>
+                <list class="bullet">
+                  <listItem>
+                    <para>
+                      com.us.openserver.protocols.winauth.WinAuthProtocolClient
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      com.us.openserver.protocols.keepalive.KeepAliveProtocol
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      com.us.cloudserver.protocols.hello.HelloProtocolClient
+                    </para>
+                  </listItem>
+                </list>
+                <codeReference>Java#HashMap</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Optionally, create a <legacyBold>com.us.openserver.Logger</legacyBold>. If one
+                  is not created a <legacyBold>com.us.openserver.ConsoleLogger</legacyBold> will
+                  be automatically created for you.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Finally, create the <legacyBold>com.us.cloudserver.Client</legacyBold> passing
+                  in the <legacyBold>this</legacyBold> as the
+                  <legacyBold>IClientObserver</legacyBold> parameter, the
+                  <legacyBold>ServerConfiguration</legacyBold>, the
+                  <legacyBold>HashMap</legacyBold> of
+                  <legacyBold>ProtocolConfiguration</legacyBold>s and, if created, the
+                  <legacyBold>Logger</legacyBold>.
+                </para>
+                <codeReference>Java#ClientCreate</codeReference>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="Connect">
+      <title>Connect to the Server</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Optionally, implement the <legacyBold>com.us.openserver.ILoggerObserver</legacyBold>
+                  interface enabling the application to receive internal log messages.
+                </para>
+                <codeReference>Java#LoggerObserver</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  To receive notification when the connection is lost, modify the class to
+                  implement <legacyBold>com.us.openserver.IClientObserver</legacyBold> then
+                  implement the interface by adding the following method:
+                </para>
+                <codeReference>Java#ClientObserver</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Call <legacyBold>Client.connect</legacyBold> to connect to server.
+                </para>
+                <codeReference>Java#Connect</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  To get a list of protocols running on the server call
+                  <legacyBold>Client.getServerSupportedProtocolIds</legacyBold>.
+                </para>
+                <codeReference>Java#GetProtocolIDs</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>com.us.openserver.protocols.winauth.WinAuthProtocolClient</legacyBold>
+                  protocol then call
+                  <legacyBold>WinAuthProtocolClient.authenticate</legacyBold>
+                  to authenticate the connection.
+                </para>
+                <codeReference>Java#Authenticate</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>com.us.openserver.protocols.keepalive.KeepAliveProtocol</legacyBold>
+                  to enable the client/server Keep-Alive (aka Heartbeat) protocol.
+                </para>
+                <codeReference>Java#KeepAlive</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>com.us.cloudserver.protocols.hello.HelloProtocolClient</legacyBold>
+                  then call
+                  <legacyBold>HelloProtocolClient.hello</legacyBold>.
+                </para>
+                <codeReference>Java#Hello</codeReference>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="ClientSideComponents"/>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

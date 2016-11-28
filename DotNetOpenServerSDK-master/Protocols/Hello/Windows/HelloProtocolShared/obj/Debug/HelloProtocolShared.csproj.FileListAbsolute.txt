@@ -1,0 +1,5 @@
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolShared\obj\Debug\HelloProtocolShared.csprojResolveAssemblyReference.cache
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\bin\US.OpenServer.Protocols.Hello.Shared.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\bin\US.OpenServer.Protocols.Hello.Shared.pdb
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolShared\obj\Debug\US.OpenServer.Protocols.Hello.Shared.dll
+C:\Users\Damien\Desktop\Software development\UpperSettings\DotNetOpenServerSDK-master\Protocols\Hello\Windows\HelloProtocolShared\obj\Debug\US.OpenServer.Protocols.Hello.Shared.pdb

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="Logging" revisionNumber="1">
+  <developerWalkthroughDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <summary>
+      <para>
+        DotNetOpenServer implements application logging through the
+        <codeEntityReference>T:US.OpenServer.Logger</codeEntityReference> base class.
+        Included in this SDK is a
+        <codeEntityReference>T:US.OpenServer.Log4NetLogger</codeEntityReference> class that
+        wraps and extends the open source <externalLink>
+          <linkText>log4Net</linkText>
+          <linkUri>http://logging.apache.org/log4net/</linkUri>
+        </externalLink>.ILog.
+        You have the option of using our base logger, our log4Net logger or any logger
+        of your choice by simply extending the
+        <codeEntityReference>T:US.OpenServer.Logger</codeEntityReference> base class.
+      </para>
+    </summary>
+
+    <introduction>
+      <autoOutline>0</autoOutline>
+    </introduction>
+
+    <section address="Section1">
+      <title>Configure the Default Logger using the app.config</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Open your application's app.config file and add the following
+                  <legacyBold>configSections</legacyBold> item:
+                </para>
+                <codeReference>WindowsServer#AppConfigLog4NetConfigSection</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Next add the <legacyBold>log4Net</legacyBold> section. For detailed information on
+                  the log4Net configuration options, see the
+                  <externalLink><linkText>Apache log4Net</linkText><linkUri>http://logging.apache.org/log4net/</linkUri></externalLink>
+                  documentation.
+                </para>
+                <codeReference>WindowsServer#AppConfigLog4Net</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From your server application, create the
+                  <codeEntityReference>T:US.OpenServer.Server</codeEntityReference> object passing
+                  null for the Logger parameter.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From your Windows client application, create the
+                  <codeEntityReference>T:US.OpenServer.Client</codeEntityReference> object
+                  passing null for the Logger parameter.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="Section2">
+      <title>Configure A Custom Logger</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Create an instance of your custom logger.
+                </para>                
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From your server application, create the
+                  <codeEntityReference>T:US.OpenServer.Server</codeEntityReference> object passing
+                  your custom logger for the Logger parameter.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From your Windows client application, create the
+                  <codeEntityReference>T:US.OpenServer.Client</codeEntityReference> object
+                  passing your custom logger for the Logger parameter.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="ConfiguringWindowsComponents"/>
+      <codeEntityReference>T:US.OpenServer.Logger</codeEntityReference>
+
+      <externalLink>
+        <linkText>log4Net</linkText>
+        <linkUri>http://logging.apache.org/log4net/</linkUri>
+      </externalLink>
+    </relatedTopics>
+  </developerWalkthroughDocument>
+</topic>
