@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ServerSideComponents" revisionNumber="1">
+  <developerWalkthroughDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        DotNetOpenServer is implemented on Windows using the .Net Framework 4.5.2. The
+        server is implemented as an asynchronous TCP socket server.
+      </para>      
+    </introduction>
+
+    <section address="SSL">
+      <title>SSL/TLS 1.2</title>
+      <content>
+        <para>
+          .Net components are used to negotiate SSL/TLS 1.2.
+        </para>
+      </content>
+    </section>
+
+    <section address="Protocols">
+      <title>Protocols</title>
+      <content>
+        <para>
+          Protocols are implemented in stand-alone assemblies which,
+          when requested by the client, are loaded using Reflection.
+        </para>
+      </content>
+    </section>
+
+    <section address="Security">
+      <title>Security</title>
+      <content>
+        <para>
+          By default, Windows Authentication is used to authenticate client connections,
+          however; any authentication method can be implemented by simply extending the
+          <codeEntityReference>T:US.OpenServer.Protocols.AuthenticationProtocolBase</codeEntityReference>
+          abstract base class.
+        </para>
+      </content>
+    </section>
+
+    <section address="Logging">
+      <title>Logging</title>
+      <content>
+        <para>
+          By default, the server logs information and error messages through the
+          <externalLink>
+            <linkText>Apache log4net</linkText>
+            <linkUri>http://logging.apache.org/log4net/</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink> assemblies.
+        </para>
+      </content>
+    </section>
+    
+    <section address="Configuration">
+      <title>Configuration</title>
+      <content>
+        <para>
+          All TCP socket server properties, information required for Reflection to load
+          protocol implementations and log4net properties can be set within the <link
+          xlink:href="ConfiguringWindowsComponents.app.config">app.config</link> file or
+          programatically within your application.
+        </para>
+      </content>
+    </section>
+
+    <nextSteps>
+      <content>
+        <para>
+          To create a Windows server application see the <link xlink:href="CreatingServerSideComponents" /> topic.
+        </para>
+      </content>
+    </nextSteps>    
+    
+    <relatedTopics>      
+    </relatedTopics>
+  </developerWalkthroughDocument>
+
+</topic>

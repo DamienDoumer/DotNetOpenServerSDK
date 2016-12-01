@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="CreatingProtocols" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        This topic lists 3 tutorials that will show you how to implement your own
+        application layer protocol in C# for Windows and Windows Mobile applications, in
+        Java for standard Java and Android applications, and in Objective-C for Mac,
+        iPhone and iPad applications.
+      </para>      
+    </introduction>
+
+    <section address="Links">
+      <title>Platforms</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="CreatingProtocols.CSharp" />
+            </para>
+            <para>
+              <link xlink:href="CreatingProtocols.Java" />
+            </para>
+            <para>
+              <link xlink:href="CreatingProtocols.Objective-C" />
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+    
+    <relatedTopics>
+      <link xlink:href="Protocols" />
+      <link xlink:href="ServerSideComponents" />
+      <link xlink:href="ClientSideComponents" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

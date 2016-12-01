@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<examples>
+  <item id="Android#Import">
+    <sampleCode language="Java">
+      import com.us.openserver.*;
+      import com.us.openserver.configuration.*;
+      import com.us.openserver.protocols.*;
+      import com.us.openserver.protocols.hello.*;
+      import com.us.openserver.protocols.keepalive.*;
+      import com.us.openserver.protocols.winauth.*;
+
+      import java.util.HashMap;
+    </sampleCode>
+  </item>
+
+  <item id="Android#ConnectHandler">
+    <sampleCode language="Java">
+      public void onConnect(View v)
+      {
+      }
+    </sampleCode>
+  </item>
+  
+  <item id="Android#ServerConfiguration">
+    <sampleCode language="Java">
+      ServerConfiguration cfg = new ServerConfiguration();
+      cfg.setHost(txtHost.getText().toString());
+      TlsConfiguration tls = cfg.getTlsConfiguration();
+      tls.setEnabled(true);
+    </sampleCode>
+  </item>
+  
+  <item id="Android#LoggerObserver">
+    <sampleCode language="Java">
+      ...
+      import android.support.v7.app.ActionBarActivity;
+      import com.us.openserver.*;
+      ...
+      public class MainActivity extends ActionBarActivity implements ILoggerObserver
+      {
+          private Client client;          
+          ...          
+          private void connect() throws Exception
+          {
+              ...
+              client.getLogger().setILoggerObserver(this);
+              ...              
+          }
+          ...
+          @Override
+          public void onLogMessage(Level level, String message) {
+		          ...
+          }
+          ...
+      }
+    </sampleCode>
+  </item>
+
+  <item id="Android#ClientObserver">
+    <sampleCode language="Java">
+      ...
+      import android.support.v7.app.ActionBarActivity;
+      import com.us.openserver.*;
+      ...
+      public class MainActivity extends ActionBarActivity implements IClientObserver
+      {          
+          ...
+          @Override
+          public void onConnectionLost(Exception arg0) {
+              ...
+          }
+          ...
+      }
+    </sampleCode>
+  </item>
+
+  <item id="Android#Connect">
+    <sampleCode language="Java">
+      client.connectBackgroundThread();
+    </sampleCode>
+  </item>
+  
+  <item id="Android#Authenticate">
+    <sampleCode language="Java">      
+      WinAuthProtocolClient wap = (WinAuthProtocolClient)client.initializeAsync(WinAuthProtocol.PROTOCOL_IDENTIFIER);
+      if (!wap.authenticate(txtUserName.getText().toString(), txtPassword.getText().toString(), null))
+          throw new Exception("Access denied.");
+    </sampleCode>
+  </item>
+
+  <item id="Android#Hello">
+    <sampleCode language="Java">
+      HelloProtocolClient hpc = (HelloProtocolClient)client.initializeAsync(HelloProtocol.PROTOCOL_IDENTIFIER);
+      String serverResponse = hpc.hello(txtUserName.getText().toString());
+      showMessageBox(serverResponse);
+    </sampleCode>
+  </item>
+</examples>
+

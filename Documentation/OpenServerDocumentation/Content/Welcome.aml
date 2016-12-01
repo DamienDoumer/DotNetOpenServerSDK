@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="Welcome" revisionNumber="1">
+	<developerConceptualDocument 
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" 
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        Upper Setting's DotNetOpenServer SDK is an open source communication library
+        that is lightweight and fully extendable enabling developers to create fast,
+        robust and secure cloud based smart mobile device and desktop applications.
+      </para>
+    </introduction>
+    
+    <section address="Manual">
+      <title>What is in this Manual?</title>
+      <content>
+        <para>
+          This manual includes:
+        </para>
+        <list class="bullet">
+          <listItem><para>Tutorials for creating Windows server applications.</para></listItem>
+          <listItem><para>Tutorials for creating client applications for Android, iOS, Windows Mobile, Windows, Mac and Java.</para></listItem>
+          <listItem><para>Tutorials for creating your own application layer protocols.</para></listItem>
+          <listItem><para>C# reference documentation.</para></listItem>  
+        </list>
+      </content>
+    </section>
+
+    <section address="Why">
+      <title>Why?</title>
+      <content>
+        <para>
+          In 2015, frustrated with application server solutions based on slow stateless
+          HTTP based protocols such as REST, JSON and SOAP, we created our own fast
+          stateful binary protocol stack from the ground up and wrapped it up in a
+          powerful, secure, robust and lightning fast application server framework targeted
+          at Android, iOS, Windows Phone, Windows, Mac and Unix/Linux. Our protocol stack
+          <externalLink>
+            <linkText>FASTack</linkText>
+            <linkUri>http://UpperSetting.com/Technology</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>, short for Fast Access STack, is implemented in our easy to use
+          <externalLink>
+            <linkText>DotNetCloudServer SDK</linkText>
+            <linkUri>http://UpperSetting.com/DotNetCloudServer</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink> built on top our open source 
+          <externalLink>
+            <linkText>DotNetOpenServer SDK</linkText>
+            <linkUri>http://github.com/UpperSetting/DotNetOpenServerSDK</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>.
+        </para>     
+      </content>
+    </section>
+
+    <section address="Architecture">
+      <title>Architecture</title>
+      <content>
+        <mediaLink>
+          <image xlink:href="Architecture"/>
+        </mediaLink>
+      </content>
+    </section>
+
+    <section address="SSL">
+      <title>SSL/TLS 1.2</title>
+      <content>
+        <para>
+          Support is included for the latest security and encryption protocol used on the
+          Internet now, SSL/TLS 1.2, enabling both the financial and defense industry to
+          implement data sensitive client/server applications with our framework.
+        </para>
+      </content>
+    </section>
+
+    <section address="SLP">
+      <title>Session Layer Protocol</title>
+      <content>
+        <para>
+          Our session layer protocol found within our DotNetOpenServer has been
+          designed to minimize the amount of damage denial of service (DOS) attacks can
+          impose yet supports large packets.
+        </para>
+      </content>
+    </section>
+
+    <section address="AUTHP">
+      <title>Authentication Protocol (AUTHP)</title>
+      <content>
+        <para>
+          We have implemented an Authentication Protocol (AUTHP) layer that is fully
+          extendable. Out of the box, DotNetOpenServer supports Windows Authentication,
+          however; any authentication method can be implemented by simply extending our
+          simple base authentication class.
+        </para>
+      </content>
+    </section>
+
+    <section address="KAP">
+      <title>Keep-Alive Protocol (KAP)</title>
+      <content>
+        <para>
+          A common problem many stateful client/server applications encounter is the
+          ability to expose network failures in a timely fashion. DotNetCloudServer solves
+          this problem with our Keep-Alive Protocol (KAP) commonly referred to as a
+          heartbeat protocol. Both the client and server send tiny packets back and forth.
+          As soon as the heartbeat stops the framework notifies the application the
+          network has failed enabling server-side component objects to release associated
+          resources and notify the end user a network failure has occurred.
+        </para>
+      </content>
+    </section>
+
+    <section address="ROAP">
+      <title>Remote Object Access Protocol (ROAP)</title>
+      <content>
+        <para>
+          The core of our
+          <externalLink>
+            <linkText>DotNetCloudServer</linkText>
+            <linkUri>http://UpperSetting.com/DotNetCloudServer</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>
+          is our Remote Object Access Protocol (ROAP). ROAP exposes your server-side
+          component objects, methods, events, and properties to your client applications.
+          Developers create their own objects in a stand-alone assembly DLL which are then
+          automatically loaded and started by the DotNetCloudServer. Your applications can
+          not only remotely invoke server-side functions and set variables but can also
+          receive immediate event notification and variable updates as they happen without
+          the costly polling mechanisms found in our competitors' products based on REST,
+          JSON or SOAP.
+        </para>
+        <para>
+          Granular role and user authorization (security access permissions) can be
+          assigned to each method, event and property enabling systems administrators to
+          regulate who can execute methods, receive event notifications and read as well
+          as write properties. For example, a property can be configured so users can read
+          the value but only administrators can update the value.
+        </para>
+      </content>
+    </section>
+
+    <section address="Projects">
+      <title>Projects</title>
+      <content>
+        <para>
+          When we built this API our goal was to minimize duplicate code as much as
+          possible. What we ended up with was several solutions and even more projects. At
+          the lowest level is a Portable project called OpenServerShared that is shared by
+          the server, Windows client and Windows Mobile client. Next, lies a Windows
+          project called OpenServerWindowsShared that is shared between the server and
+          Windows client. Finally, there is a project for the server, Windows client and
+          Windows Mobile client.
+        </para>
+        <mediaLink>
+          <image xlink:href="ProjectHierarchy"/>
+        </mediaLink>
+        <para>
+          Since Android applications are written in Java and we wanted to support Unix and
+          Linux flavors we were able to further minimize code duplication. Using Eclipse, we
+          were able to create a single Java project responsible for generating JAR files
+          that can be used by both Android and Unix/Linux applications.
+        </para>
+        <para>
+          For those of you that are unfamiliar with the Apple operating systems, iOS
+          (iPhone and iPad) and OS X (Mac) applications are written in Objective-C or
+          Swift. We use the open source project
+          <externalLink>
+            <linkText>J2ObjC</linkText>
+            <linkUri>http://j2objc.org/</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>
+          to auto-generate our Objective-C
+          code from our Java source.
+        </para>
+        <mediaLink>
+          <image xlink:href="J2ObjC"/>
+        </mediaLink>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="AboutUS"/>
+      <link xlink:href="ServerSideComponents"/>
+      <link xlink:href="ClientSideComponents"/>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

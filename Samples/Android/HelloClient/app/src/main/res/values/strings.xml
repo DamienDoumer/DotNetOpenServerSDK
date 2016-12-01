@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DotNetOpenServer Test Client</string>
+    <string name="title_activity_login">Sign in</string>
+</resources>

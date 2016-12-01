@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<examples>
+
+  <item id="ObjC#Include">
+    <sampleCode language="Objective-C">
+      #include "Client.h"
+      #include "HelloProtocol.h"
+      #include "HelloProtocolClient.h"
+      #include "KeepAliveProtocol.h"
+      #include "ProtocolConfiguration.h"
+      #include "ServerConfiguration.h"
+      #include "ViewController.h"
+      #include "WinAuthProtocolClient.h"
+      #include "java/lang/Exception.h"
+      #include "java/lang/Integer.h"
+      #include "java/util/HashMap.h"
+    </sampleCode>
+  </item>
+
+  <item id="ObjC#LoggerObserverM">
+    <sampleCode language="Objective-C">
+      ComUsOpenserverClient *client;
+
+      - (void)connect {
+          ...
+          ComUsOpenserverLogger* logger = [client getLogger];
+          [logger setILoggerObserverWithComUsOpenserverILoggerObserver:self];
+          ...
+      }
+
+      - (void)onLogMessageWithComUsOpenserverLevelEnum:(ComUsOpenserverLevelEnum *)level
+          withNSString:(NSString *)message {
+          ...
+      }
+    </sampleCode>
+  </item>
+
+  <item id="ObjC#ClientObserverM">
+    <sampleCode language="Objective-C">
+      - (void)onConnectionLostWithJavaLangException:(JavaLangException *)ex {
+          ...
+      }
+    </sampleCode>
+  </item>
+  
+  <item id="ObjC#JavaUtilHashMap">
+    <sampleCode language="Objective-C">
+      JavaUtilHashMap *protocolConfigurations = new_JavaUtilHashMap_init();
+
+      (void) [protocolConfigurations putWithId:JavaLangInteger_valueOfWithInt_(ComUsOpenserverProtocolsWinauthWinAuthProtocol_PROTOCOL_IDENTIFIER) withId:new_ComUsOpenserverProtocolsProtocolConfiguration_initWithInt_withNSString_(ComUsOpenserverProtocolsWinauthWinAuthProtocol_PROTOCOL_IDENTIFIER, @"com.us.openserver.protocols.winauth.WinAuthProtocolClient")];
+
+      (void) [protocolConfigurations putWithId:JavaLangInteger_valueOfWithInt_(ComUsOpenserverProtocolsKeepaliveKeepAliveProtocol_PROTOCOL_IDENTIFIER) withId:new_ComUsOpenserverProtocolsProtocolConfiguration_initWithInt_withNSString_(ComUsOpenserverProtocolsKeepaliveKeepAliveProtocol_PROTOCOL_IDENTIFIER, @"com.us.openserver.protocols.keepalive.KeepAliveProtocol")];
+
+      (void) [protocolConfigurations putWithId:JavaLangInteger_valueOfWithInt_(ComUsOpenserverProtocolsHelloHelloProtocol_PROTOCOL_IDENTIFIER) withId:new_ComUsOpenserverProtocolsProtocolConfiguration_initWithInt_withNSString_(ComUsOpenserverProtocolsHelloHelloProtocol_PROTOCOL_IDENTIFIER, @"com.us.openserver.protocols.hello.HelloProtocolClient")];
+    </sampleCode>
+  </item>
+
+  <item id="ObjC#CreateClient">
+    <sampleCode language="Objective-C">
+      client = new_ComUsOpenserverClient_initWithComUsOpenserverIClientObserver_withComUsOpenserverConfigurationServerConfiguration_withJavaUtilHashMap_(self, cfg, protocolConfigurations);
+    </sampleCode>
+  </item>
+  
+  <item id="ObjC#Connect">
+    <sampleCode language="Objective-C">
+      [client connect];
+    </sampleCode>
+  </item>
+
+  <item id="ObjC#KeepAlive">
+    <sampleCode language="Objective-C">
+      (void) [client initialize__WithInt:ComUsOpenserverProtocolsKeepaliveKeepAliveProtocol_PROTOCOL_IDENTIFIER];      
+    </sampleCode>
+  </item>
+
+
+
+</examples>
+

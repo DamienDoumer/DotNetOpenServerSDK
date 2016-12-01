@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ClientSideComponents.Mac" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        This topic shows you how to create an OS X (Mac) application that uses the Windows
+        Authentication Protocol to authenticate, uses the Keep-Alive Protocol to keep
+        the connection alive and uses the sample Hello Protocol to send and receive a
+        message.
+      </para>
+      <alert>
+        <para>
+          To minimize our code base the DotNetOpenSever SDK's OS X Objective-C API is
+          auto-generated from our Java source code by the
+          <externalLink>
+            <linkText>J2ObjC</linkText>
+            <linkUri>http://j2objc.org/</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>
+          open source project.
+        </para>
+      </alert>
+      <alert>
+        <para>
+          This topic assumes you have a working knowledge of Objective-C and Xcode.
+          If you do not, detailed tutorials can be found on the
+          <externalLink>
+            <linkText>Apple Developer website</linkText>
+            <linkUri>https://developer.apple.com/library/mac/referencelibrary/GettingStarted/RoadMapOSX/books/RM_YourFirstApp_Mac/Articles/Introduction.html</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>.
+        </para>
+      </alert>
+      <para>
+        The complete source code for this sample application can be found at:
+        <externalLink>
+          <linkText>https://github.com/UpperSetting/DotNetOpenServerSDK/tree/master/Samples/Mac/HelloMacClient</linkText>
+          <linkUri>https://github.com/UpperSetting/DotNetOpenServerSDK/tree/master/Samples/Mac/HelloMacClient</linkUri>
+          <linkTarget>_blank</linkTarget>
+        </externalLink>
+      </para>
+      <autoOutline>0</autoOutline>
+    </introduction>
+
+    <section address="Application">
+      <title>Create a Mac Application using Xcode</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  If you have not already downloaded Xcode, click
+                  <externalLink>
+                    <linkText>here</linkText>
+                    <linkUri>https://developer.apple.com/xcode/downloads/</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink>
+                  and you will be re-directed to the Apple Developer download page. Once downloaded, launch Xcode.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  In the Welcome window, click <legacyBold> Create a new Xcode project
+                  </legacyBold> or choose <legacyBold>File > New > Project</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Choose a template for your new project</legacyBold> dialog
+                  select <legacyBold>OS X > Application > Cocoa Application</legacyBold>.
+                </para>
+                <mediaLink>
+                  <image xlink:href="MacXCodeTemplate"/>
+                </mediaLink>
+                <para>
+                  Click <legacyBold>Next</legacyBold>
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Choose options for your new project</legacyBold> dialog:
+                </para>
+                <list class="bullet">
+                  <listItem>
+                    <para>
+                      Set the <legacyBold>Product Name</legacyBold> to <legacyBold>HelloClient</legacyBold>.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Set the <legacyBold>Organization Name</legacyBold> to your company's name.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Set the <legacyBold>Organization Identifier</legacyBold> to <legacyBold>com.example</legacyBold>.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Set the <legacyBold>Language</legacyBold> to <legacyBold>Objective-C</legacyBold>.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Check <legacyBold>Use Storyboards</legacyBold>.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Verify <legacyBold>Create Document-Based Application</legacyBold> is unselected.
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      Verify <legacyBold>Use Core Data</legacyBold> is unselected.
+                    </para>
+                  </listItem>
+                </list>
+                <mediaLink>
+                  <image xlink:href="MacXCodeOptions"/>
+                </mediaLink>
+                <para>
+                  Click <legacyBold>Next</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the next dialog that appears, choose the location to save your project
+                  then click <legacyBold>Create</legacyBold>.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="References">
+      <title>Add the DotNetOpenServer Objective-C API Source Code</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Download
+                  <externalLink>
+                    <linkText>DotNetOpenServerSDK_Objective-C_Client.zip</linkText>
+                    <linkUri>http://github.com/UpperSetting/DotNetOpenServerSDK/releases</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink>
+                  from GitHub then extract the contents.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Project navigator</legacyBold> view, right click on the
+                  <legacyBold>HelloMacClient</legacyBold> node then select <legacyBold> Add Files
+                  to "HelloMacClient"... </legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the next dialog that appears, choose the location you previously extracted
+                  the > DotNetOpenServer_Objective-C_Client.zip too then select the sub-directory
+                  <legacyBold>src</legacyBold>. Check <legacyBold> Copy items if needed
+                  </legacyBold>, select <legacyBold>Create groups</legacyBold>, check
+                  <legacyBold>HelloMacClient</legacyBold>, then click <legacyBold>Add</legacyBold>.
+                </para>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="AddJ2ObjCReferences">
+      <title>Reference the J2ObjC Source and Library Files</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Download
+                  <externalLink>
+                    <linkText>J2ObjC</linkText>
+                    <linkUri>https://github.com/google/j2objc/releases</linkUri>
+                    <linkTarget>_blank</linkTarget>
+                  </externalLink>
+                  from GitHub, create a target directory then extract the contents of the zip file.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Project navigator</legacyBold> view, click on the
+                  <legacyBold>HelloClient</legacyBold> node then select the <legacyBold> Build
+                  Settings </legacyBold> tab. Make the following changes (substitute the
+                  directory you extracted the J2ObjC files too for $distribution-path):
+                </para>
+                <list class="ordered">
+                  <listItem><para>In User Header Search Paths, add $distribution-path/include</para></listItem>
+                  <listItem><para>In Library Search Paths, add $distribution-path/lib/macosx.</para></listItem>
+                  <listItem><para>In Other Linker Flags, add -ljre_emul. (jre_emul is J2ObjC's JRE emulation library).</para></listItem>
+                </list>
+                <para>
+                  Finally, select the <legacyBold>Build Phases</legacyBold> tab, open the Link phase and add:
+                </para>
+                <list class="ordered">
+                  <listItem><para>Foundation.framework</para></listItem>
+                  <listItem><para>Security Framework</para></listItem>
+                </list>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="AddConnectControls">
+      <title>Add Controls to Connect to the Server</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Modify the <legacyBold>Main.storyboard</legacyBold> to contain controls
+                  to enter the server hostname and client username and password.
+                </para>                
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Add a <legacyBold>Connect</legacyBold> button and then assign a <legacyBold>Click</legacyBold> event handler.
+                </para>
+                <codeReference>Mac#ConnectHandler</codeReference>
+                <mediaLink>
+                  <image xlink:href="Mac"/>
+                </mediaLink>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="CreateClient">
+      <title>Create an Instance of the Client</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Package Explorer</legacyBold>, expand your project,
+                  click <legacyBold>ViewController.m</legacyBold>.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Add the following include statements to the
+                  <legacyBold>ViewController.m</legacyBold>:
+                </para>
+                <codeReference>ObjC#Include</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  From the <legacyBold>Connect</legacyBold> button's
+                  <legacyBold>Click</legacyBold> event handler, create a
+                  <legacyBold>ComUsOpenserverConfigurationServerConfiguration</legacyBold>
+                  then set the <legacyBold>ComUsOpenserverConfigurationServerConfiguration.Host</legacyBold> property.
+                </para>
+                <codeReference>Mac#ServerConfiguration</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Create a <legacyBold>JavaUtilHashMap</legacyBold> of
+                  <legacyBold>ComUsOpenserverProtocolsProtocolConfiguration</legacyBold> keyed by
+                  the unique protocol identifier that contains the following three protocols:
+                </para>
+                <list class="bullet">
+                  <listItem>
+                    <para>
+                      <legacyBold>com.us.openserver.protocols.winauth.WinAuthProtocolClient</legacyBold>
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      <legacyBold>com.us.openserver.protocols.keepalive.KeepAliveProtocol</legacyBold>
+                    </para>
+                  </listItem>
+                  <listItem>
+                    <para>
+                      <legacyBold>com.us.cloudserver.protocols.hello.HelloProtocolClient</legacyBold>
+                    </para>
+                  </listItem>
+                </list>
+                <codeReference>ObjC#JavaUtilHashMap</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Optionally, create a
+                  <legacyBold>ComUsOpenserverLogger</legacyBold>. If one is not
+                  created a
+                  <legacyBold>ComUsOpenserverConsoleLogger</legacyBold> will be
+                  automatically created for you.
+                </para>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Finally, create the <legacyBold>ComUsOpenserverClient</legacyBold> passing in
+                  the <legacyBold>self</legacyBold> as the
+                  <legacyBold>IClientObserver</legacyBold> parameter, the
+                  <legacyBold>ComUsOpenserverConfigurationServerConfiguration</legacyBold>, the
+                  <legacyBold>JavaUtilHashMap</legacyBold> of
+                  <legacyBold>ComUsOpenserverProtocolsProtocolConfiguration</legacyBold>s and, if
+                  created, the <legacyBold>ComUsOpenserverLogger</legacyBold>.
+                </para>
+                <codeReference>ObjC#CreateClient</codeReference>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <section address="Connect">
+      <title>Connect to the Server</title>
+      <content>
+        <procedure>
+          <title></title>
+          <steps class="ordered">
+            <step>
+              <content>
+                <para>
+                  Optionally, implement the <legacyBold>ComUsOpenserverILoggerObserver</legacyBold>
+                  interface enabling the user interface to display internal log messages.
+                </para>
+                <para>ViewController.h</para>
+                <codeReference>Mac#LoggerObserverH</codeReference>
+                <para>ViewController.m</para>
+                <codeReference>ObjC#LoggerObserverM</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Implement the <legacyBold>ComUsOpenserverIClientObserver</legacyBold> interface
+                  enabling the user interface to notify the user as well as update user interface
+                  controls when the connection is lost.
+                </para>
+                <para>ViewController.h</para>
+                <codeReference>Mac#ClientObserverH</codeReference>
+                <para>ViewController.m</para>
+                <codeReference>ObjC#ClientObserverM</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Call <legacyBold>ComUsOpenserverClient.Connect</legacyBold> to connect to the server.
+                </para>
+                <codeReference>Objc#Connect</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>ComUsOpenserverProtocolsWinauthWinAuthProtocolClient</legacyBold>
+                  protocol then call
+                  <legacyBold>ComUsOpenserverProtocolsWinauthWinAuthProtocolClient.authenticate</legacyBold>
+                  to authenticate the connection.
+                </para>
+                <codeReference>Mac#Authenticate</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>ComUsOpenserverProtocolsKeepaliveKeepAliveProtocol</legacyBold>
+                  to enable the client/server Keep-Alive (aka Heartbeat) protocol.
+                </para>
+                <codeReference>ObjC#KeepAlive</codeReference>
+              </content>
+            </step>
+            <step>
+              <content>
+                <para>
+                  Initialize the
+                  <legacyBold>ComUsOpenserverProtocolsHelloHelloProtocolClient</legacyBold>
+                  then call
+                  <legacyBold>ComUsOpenserverProtocolsHelloHelloProtocolClient.helloWithNSString</legacyBold>.
+                </para>
+                <codeReference>Mac#Hello</codeReference>
+              </content>
+            </step>
+          </steps>
+        </procedure>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="ClientSideComponents"/>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

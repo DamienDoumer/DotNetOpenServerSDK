@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ClientSideComponents" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      
+      <para>The DotNetOpenServer SDK contains the following client APIs:</para>
+      <list class="bullet">
+        <listItem><para><link xlink:href="ClientSideComponents.Windows"/></para></listItem>
+        <listItem><para><link xlink:href="ClientSideComponents.Java"/></para></listItem>
+        <listItem><para><link xlink:href="ClientSideComponents.Mac"/></para></listItem>
+        <listItem><para><link xlink:href="ClientSideComponents.Android"/></para></listItem>
+        <listItem><para><link xlink:href="ClientSideComponents.iOS"/></para></listItem>
+        <listItem><para><link xlink:href="ClientSideComponents.WindowsMobile"/></para></listItem>
+      </list>
+      
+    </introduction>
+
+    <relatedTopics>
+    </relatedTopics>
+    
+  </developerConceptualDocument>
+</topic>

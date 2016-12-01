@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<examples>
+   <item id="HelloProtocol#Shared">
+    <sampleCode language="CSharp">
+      using US.OpenServer;
+      using US.OpenServer.Protocols;
+      
+      namespace US.OpenServer.Protocols.Hello
+      {
+          public class HelloProtocol : ProtocolBase
+          {
+              public const ushort PROTOCOL_IDENTIFIER = 0x000A;
+          
+              protected HelloProtocol()
+              {
+              }
+          
+              protected void Log(Level level, string message)
+              {
+                  Session.Log(level, string.Format("[Hello] {0}", message));
+              }
+          }
+      }
+    </sampleCode>
+  </item>
+  
+  <item id="HelloProtocol#Server">
+    <sampleCode language="CSharp">  
+      using System.IO;
+      using System.Text;
+      using US.OpenServer;
+      using US.OpenServer.Protocols;
+
+      namespace US.OpenServer.Protocols.Hello
+      {
+          public class HelloProtocolServer : HelloProtocol
+          {
+              public HelloProtocolServer()
+              {
+              }
+              
+              public override void OnPacketReceived(BinaryReader br)
+              {
+                  string clientHello = br.ReadString();
+                  Log(Level.Info, string.Format("Client says: {0}", clientHello));
+                  string serverResponse = string.Format("Hello {0}", clientHello);
+                  MemoryStream ms = new MemoryStream();
+                  BinaryWriter bw = new BinaryWriter(ms, Encoding.UTF8);
+                  bw.Write(HelloProtocol.PROTOCOL_IDENTIFIER);
+                  bw.Write(serverResponse);
+                  Session.Send(ms);
+                  Log(Level.Info, string.Format("Server responded: {0}", serverResponse));
+              }
+          }
+      }
+    </sampleCode>
+  </item>
+  
+  <item id="HelloProtocol#Client">
+    <sampleCode language="CSharp">  
+      using System.IO;
+      using System.Text;
+      using US.OpenServer;
+      using US.OpenServer.Protocols;
+
+      namespace US.OpenServer.Protocols.Hello
+      {
+          public class HelloProtocolClient : HelloProtocol
+          {
+              public delegate void OnHelloCompleteDelegate(string serverResponse);
+              public event OnHelloCompleteDelegate OnHelloComplete;
+
+              public HelloProtocolClient()
+              {
+              }
+
+              public override void OnPacketReceived(BinaryReader br)
+              {
+                  string serverResponse = br.ReadString();
+                  Log(Level.Info, string.Format("Server responded: {0}", serverResponse));
+
+                  if (OnHelloComplete != null)
+                      OnHelloComplete(serverResponse);
+              }
+
+              public void Hello(string message)
+              {
+                  MemoryStream ms = new MemoryStream();
+                  BinaryWriter bw = new BinaryWriter(ms, Encoding.UTF8);
+                  bw.Write(HelloProtocol.PROTOCOL_IDENTIFIER);
+                  bw.WriteString(message);
+                  Session.Send(ms);
+                  Log(Level.Info, string.Format("Client says: {0}", message));
+              }
+          }
+      }
+    </sampleCode>
+  </item>
+</examples>
+
